@@ -1,0 +1,27 @@
+li {
+    list-style-type: none;
+}
+
+.btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container {
+    margin-top: 10px;
+    border: 1px solid rgb(130, 162, 231);
+}
+
+img { 
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+li {
+    border-bottom: 1px solid grey;
+    margin-bottom: 15px;
+}
+
+li:last-child {
+    border-bottom: none;
+}

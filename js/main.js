@@ -12,7 +12,7 @@ const getDate = () =>{
         url: "https://api.github.com/users",
         dataType: "json",
         success: function(result) {
-            //console.log(result.data);
+            console.log('!!!!' + result);
             drawUsers(result);
         }
 })}
@@ -25,18 +25,22 @@ function drawUsers(users) {
     for (i in users) {
         us = users[i].login;
         arlavatarImage = users[i].avatar_url;
-        //console.log(users[i].login);
-        //console.log(users[i]);
+        //console.log('-----' + users[i]);
+        console.log(users[i]);
         html += '<div class="list-group-item">'
-                    + '<a target="blank" href="https://github.com/' + users[i].login + '">'
-                        + '<img class="img-thumbnail" src="' + users[i].avatar_url + '">'
-                    + '</a>'
-                        + '<span>login: </span>'
-                            + '<a target="blank" href="https://github.com/' + users[i].login + '">'
-                        + users[i].login
-                    + '</a>'
-                    + '<p class="name-item">Name: </p>'
-                    + '<p>email: </p>'
+                    + '<div class="list-group-item-img">'
+                        + '<a target="blank" href="https://github.com/' + users[i].login + '">'
+                            + '<img class="img-thumbnail" src="' + users[i].avatar_url + '">'
+                        + '</a>'
+                    + '</div>'
+                    + '<div class="list-group-item-text">'
+                            + '<div class="list-group-item-text-login">' 
+                                + '<span>login: </span>'
+                                    + '<a target="blank" href="https://github.com/' + users[i].login + '">' + users[i].login + '</a>'
+                            + '</div>'
+                            + '<p class="name-item">Name: </p>'
+                            + '<p>email: </p>'
+                    + '</div>'
                 + '</div>';
     }
     $('.item-list').html(html);
